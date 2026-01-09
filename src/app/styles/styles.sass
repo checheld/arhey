@@ -1,0 +1,25 @@
+@use '../../styles/mixin.sass' as *
+@use '../../styles/extends.sass' as *
+@use '../../styles/variables.sass' as *
+
+.main
+  min-height: 100vh
+  @include flex(center, 0, column, center)
+  padding: 150px 0 100px
+
+  &__cards
+    max-width: 1200px
+    @include flex(center, 60, row, space-between)
+
+  &__card
+    width: 250px
+    height: 400px
+    transition: 0.8s all
+    cursor: pointer
+    border-radius: 5px
+    background: $card
+    @extend %shadow
+
+    &:hover
+      scale: 1.1
+      opacity: 0.8

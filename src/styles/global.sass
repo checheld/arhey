@@ -1,0 +1,72 @@
+@use './mixin.sass' as *
+@use './extends.sass' as *
+@use './variables.sass' as *
+
+*::before, *::after
+  box-sizing: border-box
+
+html,
+body
+  min-height: 100vh
+
+body
+  margin: 0
+  padding: 0
+
+  &::-webkit-scrollbar-track
+    background: $primary-grey
+
+#root
+  display: flex
+  flex-direction: column
+  width: 100%
+  min-height: 100vh
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  word-wrap: break-word
+  font-family: 'Hachi Maru Pop', sans-serif
+  font-size: 14px
+  text-decoration: none
+  scroll-behavior: smooth
+  overscroll-behavior: none
+
+*::-webkit-scrollbar
+  width: 4px
+
+*::-webkit-scrollbar-track
+  background: $primary-grey
+
+*::-webkit-scrollbar-thumb
+  border-radius: 5px
+  background-color: $primary-pink
+
+.app
+  width: 100%
+  min-height: 100vh
+  background: linear-gradient(20deg,rgba(62, 62, 62, 1) 0%, rgba(139, 139, 139, 1) 100%)
+  position: relative
+
+.info-page
+  @include flex(flex-start, 60, row, center)
+  padding: 150px 50px
+
+  &__cards
+    min-width: 750px
+    @include flex(center, 60, row, center)
+    flex-wrap: wrap
+
+  &__card
+    width: 200px
+    height: 200px
+    transition: 0.8s all
+    cursor: pointer
+    border-radius: 5px
+    background: $card
+    @extend %shadow
+
+    &:hover
+      scale: 1.1
+      opacity: 0.8

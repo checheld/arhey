@@ -1,0 +1,86 @@
+@use '../../styles/mixin.sass' as *
+@use '../../styles/extends.sass' as *
+@use '../../styles/variables.sass' as *
+
+.header
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 999
+  padding: 20px 135px
+  @include flex(center, 0, row, space-between)
+  transition: 0.3s all
+
+  &__logo
+    position: relative
+    @include flex(center, 15, row, center)
+    padding: 10px 20px 10px 8px
+
+    &:before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      border-radius: 28px
+      background: rgba($card,.5)
+      width: 55px
+      height: 55px
+      transition: 0.8s all
+
+    h1
+      position: relative
+      @include font(22, $primary-black, 400, 23)
+      text-transform: uppercase
+      transition: 0.8s all
+
+    img
+      position: relative
+      transition: 0.8s all
+
+    &:hover
+
+      &:before
+        width: 100%
+        background: rgba($card,1)
+
+      h1
+        scale: 1.05
+
+      img
+        transform: rotateY(360deg)
+
+  &__container
+    @include flex(center, 60, row, center)
+
+    a
+      position: relative
+      padding: 10px 15px
+      transition: 0.8s all
+
+      span
+        position: relative
+        @include font(18, $primary-black, 400, 20)
+        text-transform: uppercase
+
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        border-radius: 28px
+        background: rgba($card,.5)
+        width: 44px
+        height: 44px
+        transition: 0.8s all
+
+      &:hover
+        scale: 1.1
+
+        &:before
+          width: 100%
+          background: rgba($card,1)
+
+      &:active
+        transform: scale(.96)
