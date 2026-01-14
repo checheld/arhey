@@ -1,17 +1,16 @@
 meta:
-  environment: node
-  toolchain:
-    name: npm
-    version: '24'
+  environment: nodejs-browser # Указываем, что это Node.js приложение с браузерной частью
+  toolchain: npm # Используем npm для управления пакетами
+
 build:
-  skip: true
-  additionalCommands: null
-  artifacts:
-    '*': /
+  # Команда сборки проекта для продакшн
+  script: npm run build
+  # Можно добавить кэширование для node_modules
+  cache:
+    - node_modules
+
 run:
-  scriptName: index.js
-  scriptArguments: null
-  nodeArguments: null
-  command: npm run start
-  persistenceMount: /data
-  containerPort: '80'
+  # Команда для запуска вашего Next.js приложения (обычно npm start)
+  script: npm run start
+  # Указываем порт, который будет доступен извне (Amvera перенаправит его на ваш порт 3000)
+  port: 3000
