@@ -4,13 +4,14 @@ import { useState } from 'react'
 import CardModal from '@/components/CardModal'
 import data from '@/common/data'
 import { ICard } from '@/common/interfaces'
+import './styles.sass'
 
 export default function Design() {
   const [selectedCard, setSelectedCard] = useState<ICard | null>(null)
 
   return (
     <>
-      <main className='info-page'>
+      <main className='info-page design'>
         <p>
           Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
           Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение

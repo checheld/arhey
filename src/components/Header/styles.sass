@@ -10,6 +10,7 @@
   padding: 20px 135px
   @include flex(center, 0, row, space-between)
   transition: 0.3s all
+  @extend %blur
 
   &__logo
     position: relative
@@ -30,7 +31,7 @@
 
     h1
       position: relative
-      @include font(22, $primary-black, 400, 23)
+      @include font(22, $primary-grey, 400, 23)
       text-transform: uppercase
       transition: 0.8s all
 
@@ -46,6 +47,7 @@
 
       h1
         scale: 1.05
+        color: $primary-black
 
       img
         transform: rotateY(360deg)
@@ -60,7 +62,7 @@
 
       span
         position: relative
-        @include font(18, $primary-black, 400, 20)
+        @include font(18, $primary-grey, 400, 20)
         text-transform: uppercase
 
       &:before

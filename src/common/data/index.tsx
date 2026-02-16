@@ -1,15 +1,18 @@
 const mainCards = [
   {
     name: 'архитектура',
-    path: '/architecture'
+    path: '/architecture',
+    class: 'architecture'
   },
   {
     name: 'дизайн',
-    path: '/design'
+    path: '/design',
+    class: 'design'
   },
   {
     name: 'издательство',
-    path: '/publishing'
+    path: '/publishing',
+    class: 'publishing'
   }
 ]
 
